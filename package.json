@@ -1,0 +1,25 @@
+{
+  "name": "x-router-swig",
+  "version": "0.0.0",
+  "description": "x-router swig view engine",
+  "main": "x-router-swig.js",
+  "repository": "attrs/x-router-swig",
+  "author": "joje <joje.attrs@gmail.com>",
+  "homepage": "https://github.com/attrs/x-router-swig",
+  "license": "MIT",
+  "keywords": [
+    "router",
+    "browserify",
+    "x-router",
+    "webmodules",
+    "swig"
+  ],
+  "files": [
+    "*.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "dependencies": {
+    "swig": "^1.4.2"
+  }
+}
