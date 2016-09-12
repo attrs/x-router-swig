@@ -11,6 +11,7 @@
     "router",
     "browserify",
     "x-router",
+    "x-router view engine",
     "webmodules",
     "swig"
   ],
@@ -19,6 +20,9 @@
     "LICENSE",
     "README.md"
   ],
+  "peerDependencies": {
+    "x-router": "^0.3.4"
+  },
   "dependencies": {
     "swig": "^1.4.2"
   }
