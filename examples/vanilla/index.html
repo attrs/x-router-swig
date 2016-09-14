@@ -1,0 +1,55 @@
+<html ng-app="app">
+<head>
+  <title>x-router-swig examples</title>
+  <meta charset="utf-8">
+  <meta name="xrouter.mode" content="hash">
+
+  <script src="/bower_components/x-router/dist/x-router.min.js"></script>
+  <script src="/bower_components/x-router-swig/dist/x-router-swig.js"></script>
+  <script>
+    xrouter()
+      .engine('html', xrouterswig())
+      .set('view target', '#page')
+      .set('views', '/partials/')
+      .get('/', function(req, res, next) {
+        res.render('page.html');
+      })
+      .get('/pagec', function(req, res, next) {
+        res.render('article.html', {
+          locals: {
+            value: 'Page C !!!'
+          }
+        });
+      })
+      .use('/:id', xrouter.Router()
+        .get('/', function(req, res, next) {
+          var vo = {
+            value: 'Success! This page is "' + req.params.id + '"'
+          };
+      
+          res.render('article.html', {
+            locals: vo
+          });
+        })
+      )
+      .on('error', function(e) {
+        console.error('error', e.detail.error);
+      })
+      .on('notfound', function(e) {
+        console.error('notfound', e.detail.href);
+      });
+  </script>
+</head>
+
+<body>
+  <div id="header">
+    <div>
+      <a href="/" route>Index</a> | 
+      <a href="/pagea" route>Page A</a> | 
+      <a href="/pageb" route>Page B</a> | 
+      <a href="/pagec" route>Page C</a>
+    </div>
+  </div>
+  <div id="page"></div>
+</body>
+</html>

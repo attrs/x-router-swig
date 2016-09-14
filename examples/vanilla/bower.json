@@ -1,0 +1,8 @@
+{
+  "name": "x-router-swig-example",
+  "private": true,
+  "dependencies": {
+    "x-router-swig": "*",
+    "x-router": "^0.3.7"
+  }
+}
