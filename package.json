@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "x-router swig view engine",
   "main": "x-router-swig.js",
+  "scripts": {
+    "prepublish": "webpack"
+  },
   "repository": "attrs/x-router-swig",
   "author": "joje <joje.attrs@gmail.com>",
   "homepage": "https://github.com/attrs/x-router-swig",
@@ -16,6 +19,7 @@
     "swig"
   ],
   "files": [
+    "dist",
     "*.js",
     "LICENSE",
     "README.md"
@@ -25,5 +29,8 @@
   },
   "dependencies": {
     "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.2"
   }
 }
